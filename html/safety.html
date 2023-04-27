@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<!--
+  Erik Debye
+  WEB180, ASN 2
+  April 02, 2023
+-->
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Ridesharing can be scary! WEG can guarantee your safety with our in-depth due diligence into our drivers and their vehicles, while offering our passengers lifetime discounts for undergoing their own background check ($30 fee)"
+    />
+    <!--FAVICONS-->
+    <link rel="apple-touch-icon" sizes="180x180" href="../assets/imgs/favicons/apple-touch-icon.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="../assets/imgs/favicons/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="../assets/imgs/favicons/favicon-16x16.png" />
+    <link rel="manifest" href="../assets/imgs/favicons/site.webmanifest" />
+    <meta name="msapplication-TileColor" content="#b91d47" />
+    <meta name="theme-color" content="#ffffff" />
+    <!--END FAVICONS-->
+    <link rel="stylesheet" href="../css/styles.css" />
+    <link rel="stylesheet" href="../css/classic.css" />
+    <link rel="stylesheet" href="../css/classic.date.css" />
+    <link rel="stylesheet" href="../css/classic.time.css" />
+    <script defer src="../js/core.js"></script>
+    <!-- JQUERY Plugins + JQuery -->
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.4/jquery.min.js"
+      integrity="sha512-pumBsjNRGGqkPzKHndZMaAG+bir374sORyzM3uulLV14lN5LyykqNk8eEeUlUkB3U0M4FApyaHraT65ihJhDpQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <script defer src="../js/jquery/picker.js"></script>
+    <script defer src="../js/jquery/picker.date.js"></script>
+    <script defer src="../js/jquery/picker.time.js"></script>
+    <script defer src="../js/jquery/jquery.validate.min.js"></script>
+
+    <title>WEG - Safety</title>
+  </head>
+  <body>
+    <header id="header" aria-label="header">
+      <img id="weg_logo" src="../assets/svg/weg.svg" alt="WEG's Logo" />
+      <nav role="navigation">
+        <ul class="nav-list">
+          <li><a class="navLink" href="../index.html">Home</a></li>
+          <li><a class="navLink" href="./how-it-works.html">How It Works</a></li>
+          <li><a class="navLink" href="./fare-estimator.html">Fare Estimator</a></li>
+          <li><a class="navLink" href="./safety.html">Safety</a></li>
+          <li><a class="navLink" href="./enterprise.html">Enterprise</a></li>
+          <li><a class="navLink" href="./drive.html">Drive For Us</a></li>
+        </ul>
+      </nav>
+      <div class="mobile-nav-icon">
+        <div id="line1" class="line"></div>
+        <div id="line2" class="line"></div>
+        <div id="line3" class="line"></div>
+      </div>
+      <nav class="mobile-nav" role="navigation">
+        <img id="weg_logo" class="mobile-logo" src="../assets/svg/weg.svg" alt="WEG's Logo" />
+        <div class="yellow-bar" aria-hidden="true"></div>
+        <ul>
+          <li><a class="navLink mobile-link" href="../index.html">Home</a></li>
+          <li><a class="navLink mobile-link" href="./how-it-works.html">How It Works</a></li>
+          <li><a class="navLink mobile-link" href="./fare-estimator.html">Fare Estimator</a></li>
+          <li><a class="navLink mobile-link" href="./safety.html">Safety</a></li>
+          <li><a class="navLink mobile-link" href="./enterprise.html">Enterprise</a></li>
+          <li><a class="navLink mobile-link" href="./drive.html">Drive For Us</a></li>
+        </ul>
+      </nav>
+    </header>
+    <div id="banner" role="region" aria-labelledby=".banner-text">
+      <p class="banner-text">Download our app today!</p>
+      <div class="app-icons">
+        <a href="#" class="banner-btn"
+          ><img src="../assets/imgs/googlePlay.png" alt="Click to be directed to the Google Play Store"
+        /></a>
+        <a href="#" class="banner-btn"
+          ><img src="../assets/imgs/AppleAppStore.png" alt="Click to be directed to the Apple App Store"
+        /></a>
+      </div>
+    </div>
+    <!-- main area -->
+    <div role="main">
+      <div id="hero" class="safety-hero">
+        <div class="safety-hero-col1">
+          <h1>WEG understands safety is paramount.</h1>
+          <h2>
+            That's why WEG commits to in-depth background checks of every driver, and offers passengers the option to
+            undergo their own background check for a lifetime discount.
+          </h2>
+        </div>
+        <div class="safety-hero-col2">
+          <img class="safety-collage" src="../assets/imgs/driver_rider.jpg" alt="A collage of a driver and a rider" />
+          <div class="flex-collage">
+            <img src="../assets/imgs/driver.jpg" alt="A WEG Driver in a mask" class="collage-img1" />
+            <img src="../assets/imgs/passenger.jpg" alt="A happy WEG customer" class="collage-img2" />
+          </div>
+        </div>
+      </div>
+      <div class="safety-features">
+        <div class="riders">
+          <h1>Riders</h1>
+          <ul>
+            <li>
+              <img src="../assets/imgs/gps.png" alt="An icon of a satellite" />
+              <p>
+                WEG uses advanced, real-time GPS technology to ensure we can track every ride from start to destination.
+              </p>
+            </li>
+            <li>
+              <img src="../assets/imgs/app.png" alt="An icon of a phone" />
+              <p>
+                Our app offers in-app emergency assistence, location sharing, and detailed driver and vehicle profiles.
+              </p>
+            </li>
+            <li>
+              <img src="../assets/imgs/code.png" alt="An icon of a barcode" />
+              <p>Drivers are trained to verify their passengers by scanning your in-app bar code.</p>
+            </li>
+            <li>
+              <img src="../assets/imgs/allday.png" alt="An icon of a clock showing 24/7" />
+              <p>A 24/7 support team is available to handle every scenario as it unfolds.</p>
+            </li>
+            <li>
+              <img src="../assets/imgs/discount.png" alt="An icon of a price tag" />
+              <p>Passengers have an opportunity to pay $30 once to get verified and unlock a lifetime 5% discount.</p>
+            </li>
+          </ul>
+        </div>
+        <div class="drivers">
+          <h1>Drivers</h1>
+          <ul>
+            <li>
+              <img src="../assets/imgs/support.png" alt="An icon of a support team member" />
+              <p>
+                WEG understands that drivers can face difficult challenges. Our separate Driver support team is
+                available 24/7.
+              </p>
+            </li>
+            <li>
+              <img src="../assets/imgs/navigation.png" alt="An icon showing a map" />
+              <p>Along with real-time tracking, WEG offers in-app navigation for both you and your passenger.</p>
+            </li>
+            <li>
+              <img src="../assets/imgs/pickup.png" alt="An icon showing a car with a badge" />
+              <p>In-app barcode scanning means you'll never pick up the wrong person again.</p>
+            </li>
+            <li>
+              <img src="../assets/imgs/verified.png" alt="An icon of a verified person" />
+              <p>Drivers can choose to switch between only offering rides to verified passengers at any time.</p>
+            </li>
+            <li>
+              <img src="../assets/imgs/regional.png" alt="An icon showing a team of people" />
+              <p>When crises occur, you can count on your regional WEG team to support you.</p>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="safety-concern">
+        <h1>Have a Safety Concern?</h1>
+        <form class="form" id="safety" role="form">
+          <div class="form-row">
+            <label for="name">Your full name<span class="required">*</span></label>
+            <div class="error-wrapper">
+              <input
+                size="30"
+                type="text"
+                name="name"
+                id="name"
+                placeholder=" "
+                autocomplete="off"
+                aria-label="Your full Name"
+              />
+            </div>
+          </div>
+          <div class="form-row">
+            <label for="driver">Driver's name</label>
+            <input
+              size="30"
+              type="text"
+              name="driver"
+              id="driver"
+              placeholder=" "
+              autocomplete="off"
+              aria-label="Driver's Name"
+            />
+          </div>
+          <div class="form-row">
+            <label for="date">Ride Date</label>
+            <input
+              class="datepicker"
+              type="text"
+              name="date"
+              id="date"
+              placeholder=" "
+              autocomplete="off"
+              aria-label="Ride Date"
+            />
+          </div>
+          <div class="form-row">
+            <label for="time">Ride Time</label>
+            <input
+              class="timepicker"
+              type="text"
+              name="time"
+              id="time"
+              placeholder=" "
+              autocomplete="off"
+              aria-label="Ride Time"
+            />
+          </div>
+          <!-- ARIA FIX HACK JQuery -->
+          <script>
+            window.addEventListener('load', (e) => {
+              const ariaTimeList = document.querySelector('.picker__list');
+              ariaTimeList.setAttribute('aria-label', 'Pick a time from this list');
+              const calendar = document.querySelector('#date_table');
+              calendar.setAttribute('aria-label', 'Pick a day from the calendar');
+              const todayBtn = document.querySelector('.picker__button--today');
+              todayBtn.style.color = 'white';
+              todayBtn.style.backgroundColor = 'black';
+              const ariaTime = document.querySelector('#time');
+              ariaTime.removeAttribute('aria-expanded');
+              const ariaDate = document.querySelector('#date');
+              ariaDate.removeAttribute('aria-expanded');
+            });
+          </script>
+          <div class="form-row">
+            <label for="email">Email<span class="required">*</span></label>
+            <div class="error-wrapper">
+              <input
+                size="30"
+                type="text"
+                name="email"
+                id="email"
+                placeholder=" "
+                autocomplete="off"
+                aria-label="Email Address"
+              />
+            </div>
+          </div>
+          <div class="form-row--textarea">
+            <label for="comments">Your concerns<span class="required">*</span></label>
+            <div class="error-wrapper--textarea">
+              <textarea
+                name="comments"
+                id="comments"
+                placeholder=" "
+                autocomplete="off"
+                aria-label="Your concerns"
+              ></textarea>
+            </div>
+          </div>
+          <button type="submit" id="submit" class="form-btn">Submit</button>
+        </form>
+        <!-- JQuery -->
+        <script>
+          //form picker
+          $(document).ready(function () {
+            $('.datepicker').pickadate({
+              labelMonthNext: 'Go to the next month',
+              labelMonthPrev: 'Go to the previous month',
+              labelMonthSelect: 'Pick a month from the dropdown',
+              labelYearSelect: 'Pick a year from the dropdown',
+              selectMonths: true,
+              selectYears: true,
+              editable: false,
+            });
+            $('.timepicker').pickatime({
+              editable: false,
+            });
+          });
+          $(document).ready(function () {
+            $('#safety').validate({
+              rules: {
+                name: {
+                  required: true,
+                  minlength: 5,
+                },
+                email: {
+                  required: true,
+                  email: true,
+                },
+                comments: {
+                  required: true,
+                  minlength: 45,
+                },
+              },
+              messages: {
+                name: {
+                  required: 'Please enter your name.',
+                  minlength: 'Please enter your full name.',
+                },
+                email: {
+                  required: 'Please enter your email address.',
+                  email: 'This is not a valid email address.',
+                },
+                comments: {
+                  required: 'Please enter your concerns.',
+                  minlength: 'Please provide more details.',
+                },
+              },
+            });
+          });
+        </script>
+      </div>
+    </div>
+    <!-- Footer -->
+    <footer role="contentinfo">
+      <div class="footer-info">
+        <img id="weg_logo" src="../assets/svg/weg.svg" alt="WEG's Logo" />
+        <p>&#169; Copyright WEG 2023</p>
+        <p>
+          (A site by
+          <a class="my-link" target="_blank" rel="noopener" href="https://github.com/Erik-Debye">Erik Debye</a>)
+        </p>
+      </div>
+      <div class="footer-links">
+        <h2>Helpful Links</h2>
+        <ul id="footer" class="footer-links-list">
+          <li><a class="footer-link" href="./drive.html">Become a Driver</a></li>
+          <li><a class="footer-link" href="./safety.html">Report a Safety Concern</a></li>
+          <li><a class="footer-link" href="./fare-estimator.html">Fare Estimator</a></li>
+          <li><a class="footer-link" href="./how-it-works.html">How WEG Works</a></li>
+          <li><a class="footer-link" href="./enterprise.html">Enterprise Plans</a></li>
+          <li><a class="footer-link" href="#header">Return to Top</a></li>
+        </ul>
+      </div>
+    </footer>
+  </body>
+</html>

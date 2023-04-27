@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<!--
+  Erik Debye
+  WEB180, ASN 2
+  April 02, 2023
+-->
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Need some work? Drive for WEG! See our requirements, employee benefits, and learn a little more on becoming a WEG driver.">
+    <!--FAVICONS-->
+    <link rel="apple-touch-icon" sizes="180x180" href="../assets/imgs/favicons/apple-touch-icon.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="../assets/imgs/favicons/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="../assets/imgs/favicons/favicon-16x16.png" />
+    <link rel="manifest" href="../assets/imgs/favicons/site.webmanifest" />
+    <meta name="msapplication-TileColor" content="#b91d47" />
+    <meta name="theme-color" content="#ffffff" />
+    <!--END FAVICONS-->
+    <!-- JQuery stuffs -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+    <script src="../js/jquery/parazoom.min.js"></script>
+    <!-- End JQuery Stuffs -->
+    <link rel="stylesheet" href="../css/styles.css" />
+    <script defer src="../js/core.js"></script>
+
+    <title>Drive For WEG</title>
+  </head>
+  <body>
+    <header id="header" aria-label="header">
+      <img id="weg_logo" src="../assets/svg/weg.svg" alt="WEG's Logo" />
+      <nav role="navigation">
+        <ul class="nav-list">
+          <li><a class="navLink" href="../index.html">Home</a></li>
+          <li><a class="navLink" href="./how-it-works.html">How It Works</a></li>
+          <li><a class="navLink" href="./fare-estimator.html">Fare Estimator</a></li>
+          <li><a class="navLink" href="./safety.html">Safety</a></li>
+          <li><a class="navLink" href="./enterprise.html">Enterprise</a></li>
+          <li><a class="navLink" href="./drive.html">Drive For Us</a></li>
+        </ul>
+      </nav>
+      <div class="mobile-nav-icon">
+        <div id="line1" class="line"></div>
+        <div id="line2" class="line"></div>
+        <div id="line3" class="line"></div>
+      </div>
+      <nav class="mobile-nav" role="navigation">
+        <img id="weg_logo" class="mobile-logo" src="../assets/svg/weg.svg" alt="WEG's Logo" />
+        <div class="yellow-bar" aria-hidden="true"></div>
+        <ul>
+          <li><a class="navLink mobile-link" href="../index.html">Home</a></li>
+          <li><a class="navLink mobile-link" href="./how-it-works.html">How It Works</a></li>
+          <li><a class="navLink mobile-link" href="./fare-estimator.html">Fare Estimator</a></li>
+          <li><a class="navLink mobile-link" href="./safety.html">Safety</a></li>
+          <li><a class="navLink mobile-link" href="./enterprise.html">Enterprise</a></li>
+          <li><a class="navLink mobile-link" href="./drive.html">Drive For Us</a></li>
+        </ul>
+      </nav>
+    </header>
+    <div id="banner" role="region" aria-labelledby=".banner-text">
+      <p class="banner-text">Download our app today!</p>
+      <div class="app-icons">
+        <a href="#" class="banner-btn"
+          ><img src="../assets/imgs/googlePlay.png" alt="Click to be directed to the Google Play Store"
+        /></a>
+        <a href="#" class="banner-btn"
+          ><img src="../assets/imgs/AppleAppStore.png" alt="Click to be directed to the Apple App Store"
+        /></a>
+      </div>
+    </div>
+    <div role="main">
+      <section class="drive-hero">
+        <div class="drive-hero-img">
+          <img class="tiltThis" src="../assets/imgs/driveHero.jpg" alt="A woman happily entering her car" />
+        </div>
+        <div class="drive-hero-txt">
+          <h1>
+            Looking for work? <br />
+            Join WEG as a driver
+          </h1>
+          <h2>
+            With an array of benefits, including same-day payment, WEG invites all qualified to join us in disrupting
+            the transit market.
+          </h2>
+        </div>
+      </section>
+      <section class="drive-benefits">
+        <div class="benefit-title"><h1>Benefits</h1></div>
+        <div class="benefit benefit-1">
+          <img class="tiltThis" src="../assets/imgs/drivePaid.jpg" alt="A woman happily receiving her paycheck" />
+          <h2>Get Paid Same Day</h2>
+          <p>Become a WEG driver and enjoy the convenience of same-day paychecks for your hard work.</p>
+          <p>
+            With our innovative payment system, you can access your earnings as soon as you complete a ride, without
+            having to wait for the end of the week or month.
+          </p>
+          <p>
+            Whether you want to make extra cash on the side or work full-time, we offer competitive rates and a
+            hassle-free experience that puts you in control.
+          </p>
+        </div>
+        <div class="benefit benefit-2">
+          <img class="tiltThis" src="../assets/imgs/driveSchedule.jpg" alt="A man relaxing in a park" />
+          <h2>Work when you want</h2>
+          <p>
+            With the flexibility to work as much or as little as you want, you can easily balance work with other
+            commitments and responsibilities.
+          </p>
+          <p>
+            Whether you're a stay-at-home parent, a student, or just looking for a side hustle, our platform allows you
+            to earn money on your own terms.
+          </p>
+          <p>
+            Plus, with no minimum time commitment or fixed schedules, you have the flexibility to take time off whenever
+            you need it.
+          </p>
+        </div>
+        <div class="benefit benefit-3">
+          <img class="tiltThis" src="../assets/imgs/driveTeam.jpg" alt="A diverse group of WEG drivers" />
+          <h2>Join a community</h2>
+          <p>
+            Whether you're a seasoned driver or new to the platform, we're here to support you every step of the way.
+          </p>
+          <p>
+            And when it's time to unwind, we offer weekly driver gatherings at a local bar where you can connect with
+            other drivers, share your experiences, and relax in a casual and fun atmosphere.
+          </p>
+          <p>
+            Join us and become a part of a community that celebrates diversity and promotes mutual respect and support
+            among all its members.
+          </p>
+        </div>
+        <div class="benefit benefit-4">
+          <img
+            class="tiltThis"
+            src="../assets/imgs/driveRent.jpg"
+            alt="A driver being handed the keys to his rental car"
+          />
+          <h2>No EV? No Problem.</h2>
+          <p>
+            We're proud to offer our electric car rental program, which allows qualified, safe drivers to rent an
+            electric vehicle for as low as $120 per week.
+          </p>
+          <p>
+            With our rental program, you can enjoy the benefits of driving an electric car, including lower fuel costs,
+            reduced emissions, and a smoother, quieter ride.
+          </p>
+          <p>
+            Our rental cars are also equipped with the latest technology and safety features to ensure your comfort and
+            peace of mind while driving.
+          </p>
+        </div>
+      </section>
+      <section class="drive-reqs">
+        <div class="drive-reqs-wrapper">
+          <h1>Requirements</h1>
+          <h2>You need all the below to qualify as a WEG Driver</h2>
+          <ul>
+            <li><p>Be 25+ years of age</p></li>
+            <li><p>Pass an in-depth background check</p></li>
+            <li><p>Be eligible to work within the USA</p></li>
+            <li><p>Hold a Driver's License</p></li>
+            <li><p>Proof of residency within your state</p></li>
+            <li><p>Own (or rent) an electric vehicle</p></li>
+          </ul>
+        </div>
+        <div class="drive-apply-wrapper">
+          <h1>Interested in applying?</h1>
+          <h2>Send an email to <a href="mailto:apply@weg.com">apply@weg.com</a> to get started.</h2>
+        </div>
+      </section>
+      <script>
+        jQuery('.tiltThis').parazoom({
+          scale: '1.1',
+          transitionTime: '0.3s',
+          transitionTimeLeave: '1s',
+          opacity: '1',
+          opacityHover: '1',
+          overflow: 'hidden',
+          cursor: 'default',
+          customCursorIcon: '',
+          customCursorSize: '20px',
+          tilt: true,
+          tiltXamount: 16,
+          tiltYamount: 16,
+          text: false,
+          textClass: false,
+          textPosition: 'middle',
+          textAlignment: 'center',
+          textXParallax: 10,
+          textYParallax: 10,
+          textOpacity: 0,
+          textOpacityHover: 1,
+        });
+      </script>
+    </div>
+    <!-- Footer -->
+    <footer role="contentinfo">
+      <div class="footer-info">
+        <img id="weg_logo" src="../assets/svg/weg.svg" alt="WEG's Logo" />
+        <p>&#169; Copyright WEG 2023</p>
+        <p>
+          (A site by
+          <a class="my-link" target="_blank" rel="noopener" href="https://github.com/Erik-Debye">Erik Debye</a>)
+        </p>
+      </div>
+      <div class="footer-links">
+        <h2>Helpful Links</h2>
+        <ul id="footer" class="footer-links-list">
+          <li><a class="footer-link" href="./drive.html">Become a Driver</a></li>
+          <li><a class="footer-link" href="./safety.html">Report a Safety Concern</a></li>
+          <li><a class="footer-link" href="./fare-estimator.html">Fare Estimator</a></li>
+          <li><a class="footer-link" href="./how-it-works.html">How WEG Works</a></li>
+          <li><a class="footer-link" href="./enterprise.html">Enterprise Plans</a></li>
+          <li><a class="footer-link" href="#header">Return to Top</a></li>
+        </ul>
+      </div>
+    </footer>
+  </body>
+</html>

@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<!--
+  Erik Debye
+  WEB180, ASN 2
+  April 02, 2023
+-->
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Curious about the price of a WEG ride? Try out our sleek fare estimator to get a ballpark estimation before confirming your ride.">
+    <!--FAVICONS-->
+    <link rel="apple-touch-icon" sizes="180x180" href="../assets/imgs/favicons/apple-touch-icon.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="../assets/imgs/favicons/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="../assets/imgs/favicons/favicon-16x16.png" />
+    <link rel="manifest" href="../assets/imgs/favicons/site.webmanifest" />
+    <meta name="msapplication-TileColor" content="#b91d47" />
+    <meta name="theme-color" content="#ffffff" />
+    <!--END FAVICONS-->
+    <link rel="stylesheet" href="../css/styles.css" />
+    <!-- Vue3 Global Prod Min -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/3.2.47/vue.global.prod.min.js" integrity="sha512-Wn/yBJ4RQtrSFtq1z61/DM40a7VGN8wnyg8oVhWSZAZchTO9zS/l8Kw6bk32CYjS5VgProK4ujLRMqxEE/bUPQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <!-- Free LocationIQ Leaflet Plugin -->
+    <script src="https://tiles.locationiq.com/v3/libs/maplibre-gl/1.15.2/maplibre-gl.js"></script>
+    <link href="https://tiles.locationiq.com/v3/libs/maplibre-gl/1.15.2/maplibre-gl.css" rel="stylesheet" />
+
+    <script src="https://tiles.locationiq.com/v3/js/liq-styles-ctrl-libre-gl.js?v=0.1.6"></script>
+    <link href="https://tiles.locationiq.com/v3/css/liq-styles-ctrl-libre-gl.css?v=0.1.6" rel="stylesheet" />
+    <script src="https://tiles.locationiq.com/v3/libs/gl-geocoder/4.5.1/locationiq-gl-geocoder.min.js?v=0.2.2"></script>
+    <link
+      rel="stylesheet"
+      href="https://tiles.locationiq.com/v3/libs/gl-geocoder/4.5.1/locationiq-gl-geocoder.css?v=0.2.2"
+      type="text/css"
+    />
+    <!-- End LocationIQ Leaflet Plugin -->
+    <script defer src="../js/core.js"></script>
+    <title>WEG - Fare Estimator</title>
+  </head>
+  <body>
+    <header id="header" aria-label="header">
+      <img id="weg_logo" src="../assets/svg/weg.svg" alt="WEG's Logo" />
+      <nav role="navigation">
+        <ul class="nav-list">
+          <li><a class="navLink" href="../index.html">Home</a></li>
+          <li><a class="navLink" href="./how-it-works.html">How It Works</a></li>
+          <li><a class="navLink" href="./fare-estimator.html">Fare Estimator</a></li>
+          <li><a class="navLink" href="./safety.html">Safety</a></li>
+          <li><a class="navLink" href="./enterprise.html">Enterprise</a></li>
+          <li><a class="navLink" href="./drive.html">Drive For Us</a></li>
+        </ul>
+      </nav>
+      <div class="mobile-nav-icon">
+        <div id="line1" class="line"></div>
+        <div id="line2" class="line"></div>
+        <div id="line3" class="line"></div>
+      </div>
+      <nav class="mobile-nav" role="navigation">
+        <img id="weg_logo" class="mobile-logo" src="../assets/svg/weg.svg" alt="WEG's Logo" />
+        <div class="yellow-bar" aria-hidden="true"></div>
+        <ul>
+          <li><a class="navLink mobile-link" href="../index.html">Home</a></li>
+          <li><a class="navLink mobile-link" href="./how-it-works.html">How It Works</a></li>
+          <li><a class="navLink mobile-link" href="./fare-estimator.html">Fare Estimator</a></li>
+          <li><a class="navLink mobile-link" href="./safety.html">Safety</a></li>
+          <li><a class="navLink mobile-link" href="./enterprise.html">Enterprise</a></li>
+          <li><a class="navLink mobile-link" href="./drive.html">Drive For Us</a></li>
+        </ul>
+      </nav>
+    </header>
+    <div id="banner" role="region" aria-labelledby=".banner-text">
+      <p class="banner-text">Download our app today!</p>
+      <div class="app-icons">
+        <a href="#" class="banner-btn"
+          ><img src="../assets/imgs/googlePlay.png" alt="Click to be directed to the Google Play Store"
+        /></a>
+        <a href="#" class="banner-btn"
+          ><img src="../assets/imgs/AppleAppStore.png" alt="Click to be directed to the Apple App Store"
+        /></a>
+      </div>
+    </div>
+    <div class="fare-hero" role='main'>
+      <div class="title-wrapper">
+        <h1 id='fare-hero-title' class="fare-estimator-title">Fill out the form below to estimate your fare</h1>
+      </div>
+      <video id="fare-video" autoplay="autoplay" muted controls loop width="100%">
+        <source src="../assets/video/routes-minified.webm" type="video/webm" />
+        <source src="../assets/video/routes-minified.mp4" type="video/mp4" />
+      </video>
+    </div>
+    <div class="fare-estimator" role='complementary'>
+      <h2 class="fare-estimator-attribution">
+        This form is powered by <a href="https://locationiq.com/" target="_blank" rel="noopener">LocationIQ</a>
+      </h2>
+      <div class="fare-wrapper">
+        <div class="fare-flex">
+          <div id="destination-app" class="search-app">
+            <p>Destination:</p>
+            <div class="search-box" id="destination-search-box"></div>
+            <div class="result" id="destination-result"></div>
+          </div>
+          <!-- ARIA FIX HACK -->
+          <div id="origin-app" class="search-app">
+            <p>Pickup:</p>
+            <div class="search-box" id="origin-search-box"></div>
+            <div class="result" id="origin-result"></div>
+          </div>
+          <script>
+            window.addEventListener('load', (e) => {
+              const ariaDestination = document.querySelector(
+                '#destination-search-box > div:nth-child(1) > input:nth-child(2)'
+              );
+              ariaDestination.setAttribute('aria-label', 'Search Destination');
+              ariaDestination.setAttribute('placeholder', 'Search Destination');
+              const ariaOrigin = document.querySelector('#origin-search-box > div:nth-child(1) > input:nth-child(2)');
+              ariaOrigin.setAttribute('aria-label', 'Enter Pickup');
+              ariaOrigin.setAttribute('placeholder', 'Enter Pickup');
+            });
+          </script>
+        </div>
+        <form id="fare-form">
+          <div>
+            <div>
+              <label for="passengers">Number of Passengers:</label>
+              <input id="passengers" name="passengers" type="number" value="1" min="1" required />
+            </div>
+            <div>
+              <label for="ride-type">Ride Type:</label>
+              <select id="ride-type" name="ride-type" required>
+                <option disabled value="">Please select one</option>
+                <option value="standard">Standard</option>
+                <option value="luxury">Luxury</option>
+                <option value="adventure">Adventure</option>
+              </select>
+            </div>
+          </div>
+          <button type="submit">Submit</button>
+        </form>
+      </div>
+
+      <div id="fare-results">
+        <div id="fare-table"></div>
+      </div>
+
+      <script>
+        //This part is for the video speed
+        document.querySelector('#fare-video').defaultPlaybackRate = 0.5;
+        document.querySelector('#fare-video').play();
+        //key
+        locationiq.key = 'pk.73cb0aff739b1c17f40c61f63dd83078';
+        //will need these values later
+        let destinationLat, destinationLng, destinationName, originLat, originLng, originName, passCount, ridetype;
+        //app to find the destination
+        const app1 = Vue.createApp({
+          //I looked into this usage of mounted() and created() and while a lot is still over my head, it seems that because I am manipulating the DOM using an API, mounted is the better choice because it only mounts after the DOM is loaded. Not that it matters too much here, as the user can't input stuff before the DOM loads, but generally API that changes DOM => mounted() while API that doesn't change DOM => created();
+          //https://dev.to/firstclown/should-you-use-created-or-mounted-in-vue-2m5l
+          mounted() {
+            //This is all from the locationIQ Docs (minus my key)
+            const geocoder = new MapboxGeocoder({
+              accessToken: locationiq.key,
+              limit: 5,
+              dedupe: 1,
+              countrycodes: 'US',
+              getItemValue: function (item) {
+                displayLatLon(
+                  item.place_name + ', ' + item.display_address,
+                  item.center[1],
+                  item.center[0],
+                  'destination'
+                );
+                return item.place_name;
+              },
+            });
+            geocoder.addTo('#destination-search-box');
+          },
+        }).mount('#destination-app');
+
+        //app to find the origin
+        const app2 = Vue.createApp({
+          mounted() {
+            const geocoder = new MapboxGeocoder({
+              accessToken: locationiq.key,
+              limit: 5,
+              dedupe: 1,
+              countrycodes: 'US',
+              getItemValue: function (item) {
+                displayLatLon(item.place_name + ', ' + item.display_address, item.center[1], item.center[0], 'origin');
+                return item.place_name;
+              },
+            });
+            geocoder.addTo('#origin-search-box');
+          },
+        }).mount('#origin-app');
+
+        function displayLatLon(display_name, lat, lng, app) {
+          if (app === 'destination') {
+            destinationLat = lat;
+            destinationLng = lng;
+            destinationName = display_name;
+            //const resultString = 'You have selected ' + display_name + '<br/>Lat: ' + lat + '<br/>Lon: ' + lng;
+            //document.getElementById('destination-result').innerHTML = resultString;
+          } else {
+            originLat = lat;
+            originLng = lng;
+            originName = display_name;
+            //const resultString = 'You have selected ' + display_name + '<br/>Lat: ' + lat + '<br/>Lon: ' + lng;
+            //document.getElementById('origin-result').innerHTML = resultString;
+          }
+        }
+
+        //create an app for the cost results
+        const app3 = Vue.createApp({
+          methods: {
+            async getDirections() {
+              const URL = `https://us1.locationiq.com/v1/directions/driving/${destinationLng},${destinationLat};${originLng},${originLat}?key=${locationiq.key}&overview=false&annotations=false`;
+
+              fetch(URL)
+                .then((res) => res.json())
+                .then((data) => {
+                  const meters = data.routes[0]['distance'];
+                  const miles = meters * 0.000621;
+                  const time = data.routes[0]['duration'];
+                  const allMins = Math.floor(time / 60);
+                  //here we want to call a cost function (assuming all the data is valid)
+                  if (miles) {
+                    const fare = calcFareTable(miles, allMins, passCount, ridetype, destinationName, originName);
+                    document.getElementById('fare-table').innerHTML = fare;
+                  }
+                })
+                .catch((err) => {
+                  console.log(err);
+                });
+            },
+          },
+        }).mount('#fare-results');
+
+        //Here we get the form data on submit
+        const form = document.querySelector('#fare-form');
+        form.addEventListener('submit', async (e) => {
+          e.preventDefault();
+          const data = new FormData(form);
+          passCount = Number(data.get('passengers'));
+          ridetype = data.get('ride-type');
+          await app3.getDirections();
+        });
+
+        //fn to calculate the fare
+        function calcFareTable(miles, allMins, passCount, ridetype, destinationName, originName) {
+          let baseFare = 0;
+          let passFee = 0;
+          let milesFee = 0;
+          let timeFee = 0;
+          let table = `<table aria-label="Price Estimation Breakdown"><thead><tr><th>Fees</th><th>Cost</th></tr><tbody><tr><td>Base Fare (${ridetype})</td><td>`;
+          //add base price
+          ridetype === 'standard' ? (baseFare += 6.75) : ridetype === 'luxury' ? (baseFare += 15.0) : (baseFare += 9.0);
+          table += `$${baseFare.toFixed(2)}</td></tr><tr><td>Passenger Fee (${passCount} guests)</td><td>`;
+          //add passenger count price
+          if (passCount === 1) {
+            passFee += 1.0;
+          } else {
+            passFee += passCount * 0.5;
+          }
+          table += `$${passFee.toFixed(2)}</td></tr><tr><td>Mileage Fee (~${miles.toFixed(2)} miles)</td><td>`;
+          //and mileage price
+          milesFee += miles * 0.8;
+          table += `$${milesFee.toFixed(2)}</td></tr><tr><td>Duration Fee `;
+
+          const hours = Math.floor(allMins / 60);
+          const mins = allMins % 60;
+          timeFee += allMins * 0.8;
+          table += `(~${hours}hrs ${mins}min)</td><td>$${timeFee.toFixed(2)}</td></tr>`;
+          let totalFare = baseFare + passFee + milesFee + timeFee;
+          table += `<tr><td>Estimated Total Cost (preTax)</td><td class="bold-fare">$${totalFare.toFixed(
+            2
+          )}</td></tr></tbody></table>`;
+
+          return table;
+        }
+      </script>
+    </div>
+    <!-- Footer -->
+    <footer role='contentinfo'>
+      <div class="footer-links">
+        <h2>Helpful Links</h2>
+        <ul id="footer" class="footer-links-list">
+          <li><a class="footer-link" href="./drive.html">Become a Driver</a></li>
+          <li><a class="footer-link" href="./safety.html">Report a Safety Concern</a></li>
+          <li><a class="footer-link" href="./fare-estimator.html">Fare Estimator</a></li>
+          <li><a class="footer-link" href="./how-it-works.html">How WEG Works</a></li>
+          <li><a class="footer-link" href="./enterprise.html">Enterprise Plans</a></li>
+          <li><a class="footer-link" href="#header">Return to Top</a></li>
+        </ul>
+      </div>
+      <div class="footer-info">
+        <img id="weg_logo" src="../assets/svg/weg.svg" alt="WEG's Logo" />
+        <p>&#169; Copyright WEG 2023</p>
+        <p>(A site by <a class="my-link" target="_blank" rel="noopener" href="https://github.com/Erik-Debye">Erik Debye</a>)</p>
+      </div>
+    </footer>
+  </body>
+</html>

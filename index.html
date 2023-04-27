@@ -1,0 +1,463 @@
+<!DOCTYPE html>
+<!--
+  Erik Debye
+  WEB180, Final Project
+  April 27, 2023
+-->
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="WEG is America's first all electric rideshare company. WEG has a lot of perks over competitors, and chooses to focus wholly on reliability, safety, and the environmental impacts of transit."
+    />
+    <!--FAVICONS-->
+    <link rel="apple-touch-icon" sizes="180x180" href="./assets/imgs/favicons/apple-touch-icon.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="./assets/imgs/favicons/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="./assets/imgs/favicons/favicon-16x16.png" />
+    <link rel="manifest" href="./assets/imgs/favicons/site.webmanifest" />
+    <meta name="msapplication-TileColor" content="#b91d47" />
+    <meta name="theme-color" content="#ffffff" />
+    <!--END FAVICONS-->
+    <link rel="stylesheet" href="./css/styles.css" />
+    <!-- JQUERY Plugins + JQuery -->
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.4/jquery.min.js"
+      integrity="sha512-pumBsjNRGGqkPzKHndZMaAG+bir374sORyzM3uulLV14lN5LyykqNk8eEeUlUkB3U0M4FApyaHraT65ihJhDpQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <script defer src="./js/jquery/jquery.validate.min.js"></script>
+    <!-- End jQUERY -->
+    <script
+      defer
+      src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/gsap.min.js"
+      integrity="sha512-cOH8ndwGgPo+K7pTvMrqYbmI8u8k6Sho3js0gOqVWTmQMlLIi6TbqGWRTpf1ga8ci9H3iPsvDLr4X7xwhC/+DQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <script
+      defer
+      src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/ScrollTrigger.min.js"
+      integrity="sha512-AMl4wfwAmDM1lsQvVBBRHYENn1FR8cfOTpt8QVbb/P55mYOdahHD4LmHM1W55pNe3j/3od8ELzPf/8eNkkjISQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+    <script defer src="./js/home.js"></script>
+    <script defer src="./js/core.js"></script>
+
+    <title>WEG - Electric Rideshares for All</title>
+  </head>
+  <body>
+    <header id="header" aria-label="header">
+      <img id="weg_logo" src="./assets/svg/weg.svg" alt="WEG's Logo" />
+      <nav role="navigation">
+        <ul class="nav-list">
+          <li><a class="navLink" href="./index.html">Home</a></li>
+          <li><a class="navLink" href="./html/how-it-works.html">How It Works</a></li>
+          <li><a class="navLink" href="./html/fare-estimator.html">Fare Estimator</a></li>
+          <li><a class="navLink" href="./html/safety.html">Safety</a></li>
+          <li><a class="navLink" href="./html/enterprise.html">Enterprise</a></li>
+          <li><a class="navLink" href="./html/drive.html">Drive For Us</a></li>
+        </ul>
+      </nav>
+      <div class="mobile-nav-icon">
+        <div id="line1" class="line"></div>
+        <div id="line2" class="line"></div>
+        <div id="line3" class="line"></div>
+      </div>
+      <nav class="mobile-nav" role="navigation">
+        <img id="weg_logo" class="mobile-logo" src="./assets/svg/weg.svg" alt="WEG's Logo" />
+        <div class="yellow-bar" aria-hidden="true"></div>
+        <ul>
+          <li><a class="navLink mobile-link" href="./index.html">Home</a></li>
+          <li><a class="navLink mobile-link" href="./html/how-it-works.html">How It Works</a></li>
+          <li><a class="navLink mobile-link" href="./html/fare-estimator.html">Fare Estimator</a></li>
+          <li><a class="navLink mobile-link" href="./html/safety.html">Safety</a></li>
+          <li><a class="navLink mobile-link" href="./html/enterprise.html">Enterprise</a></li>
+          <li><a class="navLink mobile-link" href="./html/drive.html">Drive For Us</a></li>
+        </ul>
+      </nav>
+    </header>
+    <div id="banner" role="region" aria-labelledby=".banner-text">
+      <p class="banner-text">Download our app today!</p>
+      <div class="app-icons">
+        <a href="#" class="banner-btn"
+          ><img src="./assets/imgs/googlePlay.png" alt="Click to be directed to the Google Play Store"
+        /></a>
+        <a href="#" class="banner-btn"
+          ><img src="./assets/imgs/AppleAppStore.png" alt="Click to be directed to the Apple App Store"
+        /></a>
+      </div>
+    </div>
+    <div role="main">
+      <section id="hero" class="hero">
+        <div class="hero-text-wrapper">
+          <h1 class="hero-header">Making the world accessible to <span class="highlighter">everyone.</span></h1>
+          <h2 class="hero-tag">
+            Introducing <span>WEG</span> — a safe, reliable, and environmentally friendly transit option.
+          </h2>
+        </div>
+        <div class="video-wrapper">
+          <video autoplay="autoplay" muted controls loop width="100%">
+            <source src="./assets/video/final-minified.webm" type="video/webm" />
+            <source src="./assets/video/final-minified.mp4" type="video/mp4" />
+          </video>
+        </div>
+      </section>
+      <section class="scroll-wrapper" id="about">
+        <div id="container" class="scrollx">
+          <div class="panel safe-cont" id="scrollEl1">
+            <h1>Safe</h1>
+            <div class="panel-flex">
+              <video autoplay="autoplay" muted controls loop>
+                <source src="./assets/video/driver.webm" type="video/webm" />
+                <source src="./assets/video/driver-optimized.mp4" type="video/mp4" />
+              </video>
+              <div class="panel-col">
+                <h2>
+                  When you take a ride with WEG, you can be confident that you will get you your destination safe and
+                  sound.
+                </h2>
+                <ul class="safe-list">
+                  <li class="safe-item">
+                    <img src="./assets/svg/background.svg" alt="An icon depicting a person and checkmark" />
+                    <h3>Background checks for all drivers & checks available for passengers</h3>
+                  </li>
+                  <li class="safe-item">
+                    <img src="./assets/svg/sos.svg" alt="An icon depiciting SOS" />
+                    <h3>Our app features an emergency button to notify us if something goes wrong</h3>
+                  </li>
+                  <li class="safe-item">
+                    <img src="./assets/svg/maintenance.svg" alt="An icon of a crossed wrench and screwdriver" />
+                    <h3>All vehicles are required to obtain monthly and as needed maintainence.</h3>
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <h2 class="track-panel">01/03</h2>
+          </div>
+          <div class="panel reliable-cont" id="scrollEl2">
+            <h1>Reliable</h1>
+            <div class="panel-flex">
+              <img class="reliable-img" src="./assets/imgs/reliable.jpg" alt="A women getting into a Luxury WEG ride" />
+              <div class="panel-col">
+                <h2>When you use WEG, you are guaranteed to get to your destination as fast as possible.</h2>
+                <br />
+                <h2>
+                  WEG uses state-of-the-art algorithms developed from the millions of rides WEG has completed to develop
+                  the most quickest and most efficient routes.
+                </h2>
+              </div>
+            </div>
+            <h2 class="track-panel">02/03</h2>
+          </div>
+          <div class="panel safe-cont" id="scrollEl1">
+            <h1>Eco-Friendly</h1>
+            <div class="panel-flex">
+              <video autoplay="autoplay" controls muted loop>
+                <source src="./assets/video/charging.webm" type="video/webm" />
+                <source src="./assets/video/charging-optimized.mp4" type="video/mp4" />
+              </video>
+              <div class="panel-col">
+                <h2>Climate change affects all of us, but WEG is the first 100% Electric Rideshare company.</h2>
+                <br />
+                <h2>
+                  This means that when you use WEG, you can rest easy knowing you did your part in reducing emissions by
+                  traveling efficiently.
+                </h2>
+                <br />
+                <h2>
+                  WEG also donates 10% of each fare to the Great Green Wall initiative, a project restoring 100 million
+                  hectres of land spanning 11 African countries.
+                </h2>
+              </div>
+            </div>
+            <h2 class="track-panel">03/03</h2>
+          </div>
+        </div>
+      </section>
+      <section id="ride-options" role="region" aria-labelledby="pick">
+        <h1 id="pick">Pick Your Ride</h1>
+        <div class="ride-cards-cont">
+          <div class="ride-card">
+            <h2>Standard</h2>
+            <h3>
+              Up to 3 Passengers <br />
+              Max Range: 200 mi/320 km
+            </h3>
+            <hr />
+            <h3>Affordable private ride for daily errand running with the shortest wait times</h3>
+            <hr />
+            <h3>Base Fare: $6.75</h3>
+            <hr />
+            <canvas id="webgl-std" class="webgl"></canvas>
+            <img class="webgl-replace" src="./assets/imgs/std.jpg" alt="A standard Telsa Model 3" />
+            <button class="booking-btn">Book Now!</button>
+          </div>
+          <div class="ride-card">
+            <h2>Luxury</h2>
+            <h3>
+              Up to 4 Passengers <br />
+              Max Range: 300 mi/482 km
+            </h3>
+            <hr />
+            <h3>All black rides to make an impression at your destination featuring drivers in formal attire</h3>
+            <hr />
+            <h3>Base Fare: $15.00</h3>
+            <hr />
+            <canvas id="webgl-lux" class="webgl"></canvas>
+            <img class="webgl-replace" src="./assets/imgs/lux.jpg" alt="An All-Black 2024 Rivian SUV" />
+            <button class="booking-btn">Book Now!</button>
+          </div>
+          <div class="ride-card">
+            <h2>Adventure</h2>
+            <h3>
+              Up to 7 Passengers <br />
+              Max Range: 350 mi/563 km
+            </h3>
+            <hr />
+            <h3>Expanded Space for luggage, skis, pets, and more! Afforable option for getting some extra leg room.</h3>
+            <hr />
+            <h3>Base Fare: $9.00</h3>
+            <hr />
+            <canvas id="webgl-exd" class="webgl"></canvas>
+            <img class="webgl-replace" src="./assets/imgs/adv.jpg" alt="A 2024 Hummer EV" />
+            <button class="booking-btn">Book Now!</button>
+          </div>
+        </div>
+      </section>
+      <section id="who" role="region" aria-labelledby="who-txt">
+        <h1 id="who-txt">Who We Are</h1>
+        <div class="who-flex-wrapper">
+          <div class="who-col">
+            <img src="./assets/imgs/weg_staff.jpg" alt="A group selfie of all the WEG founders" />
+            <div class="who-inner-col">
+              <p>
+                WEG started from a collective of environmentalists, visionaries, and economists who seek to disrupt the
+                current rideshare market with a safer, more reliable, and more environmentally concious transit option.
+              </p>
+            </div>
+          </div>
+          <div class="who-col">
+            <img src="./assets/imgs/who-2.jpg" alt="" srcset="" />
+            <div class="who-inner-col">
+              <p>
+                Everyone at WEG strives to make transit options more affordable, more efficent, more depandable, and
+                more green for everyone.
+              </p>
+              <p>
+                Using advanced ride analysis, customer metrics, and other data, we hope to use complex analysis to see
+                where we can make a substantial difference in transit solutions around the world and in your
+                neighborhood.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section id="contact">
+        <h1>Contact Us</h1>
+        <div class="contact-cont">
+          <div class="form-cont">
+            <form class="form" role="form" id="contactform">
+              <h2 class="form-title">Get in Touch!</h2>
+              <div class="form-row">
+                <label for="name">Full name<span class="required">*</span></label>
+                <div class="error-wrapper">
+                  <input
+                    size="30"
+                    type="text"
+                    name="name"
+                    id="name"
+                    placeholder=" "
+                    autocomplete="off"
+                    aria-label="Your Name"
+                  />
+                </div>
+              </div>
+              <div class="form-row">
+                <label for="email">Email<span class="required">*</span></label>
+                <div class="error-wrapper">
+                  <input
+                    size="30"
+                    type="text"
+                    name="email"
+                    id="email"
+                    placeholder=" "
+                    autocomplete="off"
+                    aria-label="Email Address"
+                  />
+                </div>
+              </div>
+              <div class="form-row--textarea">
+                <label for="comments">Comments or Questions<span class="required">*</span></label>
+                <div class="error-wrapper--textarea">
+                  <textarea
+                    name="comments"
+                    id="comments"
+                    placeholder=" "
+                    autocomplete="off"
+                    aria-label="Comments or Questions"
+                  ></textarea>
+                </div>
+              </div>
+              <button type="submit" id="submit" class="form-btn">Submit</button>
+            </form>
+          </div>
+          <script>
+            $(document).ready(function () {
+              $('#contactform').validate({
+                rules: {
+                  name: {
+                    required: true,
+                    minlength: 5,
+                  },
+                  email: {
+                    required: true,
+                    email: true,
+                  },
+                  comments: {
+                    required: true,
+                    minlength: 20,
+                  },
+                },
+                messages: {
+                  name: {
+                    required: 'Please enter your name.',
+                    minlength: 'Please enter your full name.',
+                  },
+                  email: {
+                    required: 'Please enter your email address.',
+                    email: 'This is not a valid email address.',
+                  },
+                  comments: {
+                    required: 'Please enter your concerns.',
+                    minlength: 'Please provide more details.',
+                  },
+                },
+              });
+            });
+          </script>
+          <div class="helpful-links">
+            <h2>Helpful Links</h2>
+            <ul id="helpful" class="helpful-links-list">
+              <li><a class="helpful-link" href="./html/drive.html">Become a Driver</a></li>
+              <li><a class="helpful-link" href="./html/safety.html">Report a Safety Concern</a></li>
+              <li><a class="helpful-link" href="./html/fare-estimator.html">Fare Estimator</a></li>
+              <li><a class="helpful-link" href="./html/how-it-works.html">How WEG Works</a></li>
+              <li><a class="helpful-link" href="./html/enterprise.html">Enterprise Plans</a></li>
+              <li><a class="helpful-link" href="#header">Return to Top</a></li>
+            </ul>
+          </div>
+        </div>
+      </section>
+      <footer>
+        <div role="contentinfo">
+          <img id="weg_logo" src="./assets/svg/weg.svg" alt="WEG's Logo" />
+          <p>&#169; Copyright WEG 2023</p>
+          <p>
+            (A site by
+            <a class="my-link" target="_blank" rel="noopener" href="https://github.com/Erik-Debye">Erik Debye</a>)
+          </p>
+        </div>
+      </footer>
+    </div>
+  </body>
+  <script type="module">
+    //Modules
+    import * as THREE from 'https://cdn.skypack.dev/three@0.128.0/build/three.module.js';
+    import { GLTFLoader } from 'https://cdn.skypack.dev/three@0.128.0/examples/jsm/loaders/GLTFLoader.js';
+    import { OrbitControls } from 'https://cdn.skypack.dev/three@0.128.0/examples/jsm/controls/OrbitControls.js';
+
+    //define canvases
+    const canvas_std = document.querySelector('#webgl-std');
+    const canvas_lux = document.querySelector('#webgl-lux');
+    const canvas_exd = document.querySelector('#webgl-exd');
+
+    //fn to create scene
+    const createScene = function (canvas, model_path) {
+      //create scene obj
+      const scene = new THREE.Scene();
+      //add background
+      scene.background = new THREE.Color(0xffffff);
+      scene.fog = new THREE.Fog(scene.background, 1, 5000);
+      //create renderer obj
+      const renderer = new THREE.WebGLRenderer({ antialias: true, canvas: canvas });
+      renderer.outputEncoding = THREE.sRGBEncoding;
+      renderer.shadowMap.enabled = true;
+      //add lights
+      const hemiLight = new THREE.HemisphereLight(0xffffff, 0xffffff, 0.6);
+      hemiLight.color.setHSL(0.6, 1, 0.6);
+      hemiLight.groundColor.setHSL(0.095, 1, 0.75);
+      hemiLight.position.set(0, 50, 0);
+      scene.add(hemiLight);
+
+      const hemiLightHelper = new THREE.HemisphereLightHelper(hemiLight, 10);
+      scene.add(hemiLightHelper);
+      const light = new THREE.AmbientLight(0x404040, 3);
+      scene.add(light);
+
+      //add camera
+      const camera = new THREE.PerspectiveCamera(24, canvas.clientWidth / canvas.clientHeight, 1, 1000);
+      camera.position.z = 4;
+      camera.position.x = 10;
+      camera.position.y = 3;
+      //add controls
+      const controls = new OrbitControls(camera, renderer.domElement);
+      controls.enableZoom = false;
+      controls.minPolarAngle = Math.PI / 2.4; // radians
+      controls.maxPolarAngle = Math.PI / 2.4; // radians
+      //add event listener
+      window.addEventListener('resize', onWindowResize);
+      function onWindowResize() {
+        const canvas_new = document.querySelector('.ride-card');
+        const width = canvas_new.clientWidth * 0.9;
+        const height = canvas.clientHeight;
+        setSize(width, height, camera, renderer);
+      }
+      //add event listener
+      controls.addEventListener('change', render);
+      function render() {
+        renderer.render(scene, camera);
+      }
+      //add loader
+      const loader = new GLTFLoader();
+      loader.load(model_path, function (gltf) {
+        const car = gltf.scene.children[0];
+        car.material.metalness = 0;
+
+        const box = new THREE.Box3().setFromObject(car);
+        const center = new THREE.Vector3();
+        box.getCenter(center);
+        car.position.sub(center);
+        car.rotation.y = Math.PI;
+        scene.add(gltf.scene);
+        animate();
+      });
+      function animate() {
+        setSize(canvas.clientWidth, canvas.clientHeight, camera, renderer);
+        renderer.render(scene, camera);
+        requestAnimationFrame(animate);
+      }
+      function setSize(width, height, cam, renderer) {
+        cam.aspect = width / height;
+        cam.updateProjectionMatrix();
+        if (window.innerWidth <= 370) {
+          cam.zoom = 0.8;
+        } else {
+          cam.zoom = 1;
+        }
+        renderer.setSize(width, height);
+        renderer.setPixelRatio(window.devicePixelRatio);
+      }
+    };
+
+    //create scene for each model
+    createScene(canvas_std, './assets/3d/hyundai.gltf');
+    createScene(canvas_lux, './assets/3d/audi.gltf');
+    createScene(canvas_exd, './assets/3d/hummer.gltf');
+  </script>
+</html>

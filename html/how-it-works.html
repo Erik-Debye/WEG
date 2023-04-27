@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<!--
+  Erik Debye
+  WEB180, ASN 2
+  April 02, 2023
+-->
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="New to WEG, or ridesharing in general? No worries! See how a standard WEG ride takes place.">
+    <!--FAVICONS-->
+    <link rel="apple-touch-icon" sizes="180x180" href="../assets/imgs/favicons/apple-touch-icon.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="../assets/imgs/favicons/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="../assets/imgs/favicons/favicon-16x16.png" />
+    <link rel="manifest" href="../assets/imgs/favicons/site.webmanifest" />
+    <meta name="msapplication-TileColor" content="#b91d47" />
+    <meta name="theme-color" content="#ffffff" />
+    <!--END FAVICONS-->
+    <link rel="stylesheet" href="../css/tiltedpage-scroll.css" />
+    <link rel="stylesheet" href="../css/styles.css" />
+    <!-- JQuery Stuffs -->
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.4/jquery.min.js"
+      integrity="sha512-pumBsjNRGGqkPzKHndZMaAG+bir374sORyzM3uulLV14lN5LyykqNk8eEeUlUkB3U0M4FApyaHraT65ihJhDpQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <script src="../js/jquery/jquery.tiltedpage-scroll.min.js"></script>
+    <!-- End JQuery Stuffs -->
+    <script defer src="../js/core.js"></script>
+
+    <title>WEG - How It Works</title>
+  </head>
+  <body>
+    <header id="header" aria-label="header">
+      <img id="weg_logo" src="../assets/svg/weg.svg" alt="WEG's Logo" />
+      <nav role="navigation">
+        <ul class="nav-list">
+          <li><a class="navLink" href="../index.html">Home</a></li>
+          <li><a class="navLink" href="./how-it-works.html">How It Works</a></li>
+          <li><a class="navLink" href="./fare-estimator.html">Fare Estimator</a></li>
+          <li><a class="navLink" href="./safety.html">Safety</a></li>
+          <li><a class="navLink" href="./enterprise.html">Enterprise</a></li>
+          <li><a class="navLink" href="./drive.html">Drive For Us</a></li>
+        </ul>
+      </nav>
+      <div class="mobile-nav-icon">
+        <div id="line1" class="line"></div>
+        <div id="line2" class="line"></div>
+        <div id="line3" class="line"></div>
+      </div>
+      <nav class="mobile-nav" role="navigation">
+        <img id="weg_logo" class="mobile-logo" src="../assets/svg/weg.svg" alt="WEG's Logo" />
+        <div class="yellow-bar" aria-hidden="true"></div>
+        <ul>
+          <li><a class="navLink mobile-link" href="../index.html">Home</a></li>
+          <li><a class="navLink mobile-link" href="./how-it-works.html">How It Works</a></li>
+          <li><a class="navLink mobile-link" href="./fare-estimator.html">Fare Estimator</a></li>
+          <li><a class="navLink mobile-link" href="./safety.html">Safety</a></li>
+          <li><a class="navLink mobile-link" href="./enterprise.html">Enterprise</a></li>
+          <li><a class="navLink mobile-link" href="./drive.html">Drive For Us</a></li>
+        </ul>
+      </nav>
+    </header>
+    <div id="banner" role="region" aria-labelledby=".banner-text">
+      <p class="banner-text">Download our app today!</p>
+      <div class="app-icons">
+        <a href="#" class="banner-btn"
+          ><img src="../assets/imgs/googlePlay.png" alt="Click to be directed to the Google Play Store"
+        /></a>
+        <a href="#" class="banner-btn"
+          ><img src="../assets/imgs/AppleAppStore.png" alt="Click to be directed to the Apple App Store"
+        /></a>
+      </div>
+    </div>
+    <div role="main" class="main">
+      <section class="page1">
+        <div class="page1-bg">
+          <video autoplay="autoplay" muted controls loop>
+            <source src="../assets/video/page1-minified.webm" type="video/webm" />
+            <source src="../assets/video/page1-minified.mp4" type="video/mp4" />
+          </video>
+          <div class="page-glass">
+            <h1 class="page1-title">How can you call a WEG Ride?</h1>
+          </div>
+        </div>
+      </section>
+      <section class="page2">
+        <div class="page2-bg">
+          <div class="page2-img-cont">
+            <img
+              class="page2-photo"
+              src="../assets/imgs/iphoneMock.png"
+              alt="An image of the WEG Iphone App"
+              srcset=""
+            />
+          </div>
+          <div class="page2-ins">
+            <h1>Easy!</h1>
+            <h2>First, download the WEG app on your smart phone.</h2>
+            <h2>Next, create your account.</h2>
+            <h2>Go ahead and click "Get a Ride"</h2>
+            <h2>Fill out your trip details and press confirm</h2>
+            <div class="page2-btns">
+              <a href="#" class="page2-link"
+                ><img src="../assets/imgs/AppleAppStore.png" alt="The Apple App Store"
+              /></a>
+              <a href="#" class="page2-link"><img src="../assets/imgs/googlePlay.png" alt="The Google Play Store" /></a>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="page3">
+        <div class="page3-bg">
+          <div>
+            <h1>Now it's our job to connect you to nearby drivers</h1>
+            <h2>Those drivers see your destination, mileage, and duration of your ride.</h2>
+            <h2>Within 4 minutes, a driver will be headed on their way to pick you up!</h2>
+          </div>
+        </div>
+      </section>
+      <section class="last-page">
+        <div class="page4-bg">
+          <video autoplay="autoplay" muted controls loop>
+            <source src="../assets/video/complete-minified.webm" type="video/webm" />
+            <source src="../assets/video/complete-minified.mp4" type="video/mp4" />
+          </video>
+          <div class="page-glass">
+            <h1 class="page4-title">Once you enter the car and scan your barcode, you're set!</h1>
+            <h2>Enjoy the ride!</h2>
+          </div>
+        </div>
+      </section>
+    </div>
+    <!-- JQuery -->
+    <script>
+      if (window.screen.width > 1200) {
+        $('.main').tiltedpage_scroll({
+          sectionContainer: '> section', // define CSS selector here
+          angle: 20, // define the angle of tilted section
+          opacity: true, // toggle opacity
+          scale: true, // toggle scaling effect
+          outAnimation: true, //  do not want animation toggle
+        });
+      }
+    </script>
+    <!-- Footer -->
+    <footer role="contentinfo">
+      <div class="footer-info">
+        <img id="weg_logo" src="../assets/svg/weg.svg" alt="WEG's Logo" />
+        <p>&#169; Copyright WEG 2023</p>
+        <p>
+          (A site by
+          <a class="my-link" target="_blank" rel="noopener" href="https://github.com/Erik-Debye">Erik Debye</a>)
+        </p>
+      </div>
+      <div class="footer-links">
+        <h2>Helpful Links</h2>
+        <ul id="footer" class="footer-links-list">
+          <li><a class="footer-link" href="./drive.html">Become a Driver</a></li>
+          <li><a class="footer-link" href="./safety.html">Report a Safety Concern</a></li>
+          <li><a class="footer-link" href="./fare-estimator.html">Fare Estimator</a></li>
+          <li><a class="footer-link" href="./how-it-works.html">How WEG Works</a></li>
+          <li><a class="footer-link" href="./enterprise.html">Enterprise Plans</a></li>
+          <li><a class="footer-link" href="#header">Return to Top</a></li>
+        </ul>
+      </div>
+    </footer>
+  </body>
+</html>
