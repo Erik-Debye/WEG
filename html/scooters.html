@@ -11,7 +11,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta
       name="description"
-      content="New to WEG, or ridesharing in general? No worries! See how a standard WEG ride takes place."
+      content="WEG recognizes that cars are not the total transit solution, especially considering greenhouse emissions. WEG's newly launched e-scooter program hopes to explore more personal, on-demand transit solutions with a respect to local ordinances. The program is available in Baltimore, Pittsburgh, Phoenix, Salt Lake City, and Savannah."
     />
     <!--FAVICONS-->
     <link rel="apple-touch-icon" sizes="180x180" href="../assets/imgs/favicons/apple-touch-icon.png" />
@@ -21,20 +21,10 @@
     <meta name="msapplication-TileColor" content="#b91d47" />
     <meta name="theme-color" content="#ffffff" />
     <!--END FAVICONS-->
-    <link rel="stylesheet" href="../css/tiltedpage-scroll.css" />
     <link rel="stylesheet" href="../css/styles.css" />
-    <!-- JQuery Stuffs -->
-    <script
-      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.4/jquery.min.js"
-      integrity="sha512-pumBsjNRGGqkPzKHndZMaAG+bir374sORyzM3uulLV14lN5LyykqNk8eEeUlUkB3U0M4FApyaHraT65ihJhDpQ=="
-      crossorigin="anonymous"
-      referrerpolicy="no-referrer"
-    ></script>
-    <script src="../js/jquery/jquery.tiltedpage-scroll.min.js"></script>
-    <!-- End JQuery Stuffs -->
     <script defer src="../js/core.js"></script>
-
-    <title>WEG - How It Works</title>
+    <!-- JQUERY Plugins + JQuery -->
+    <title>WEG - E-Scooters</title>
   </head>
   <body>
     <header id="header" aria-label="header">
@@ -47,7 +37,7 @@
           <li><a class="navLink" href="./safety.html">Safety</a></li>
           <li><a class="navLink" href="./enterprise.html">Enterprise</a></li>
           <li><a class="navLink" href="./drive.html">Drive For Us</a></li>
-          <li><a class="navLink" href="./scooters.html">Scooters</a></li>
+          <li><a class="navLink" href="./scooters.htrml">Scooters</a></li>
         </ul>
       </nav>
       <div class="mobile-nav-icon">
@@ -80,72 +70,64 @@
         /></a>
       </div>
     </div>
-    <div role="main" class="main">
-      <section class="page1">
-        <div class="page1-bg">
-          <video autoplay="autoplay" muted controls loop>
-            <source src="../assets/video/page1-minified.webm" type="video/webm" />
-            <source src="../assets/video/page1-minified.mp4" type="video/mp4" />
-          </video>
-          <div class="page-glass">
-            <h1 class="page1-title">How can you call a WEG Ride?</h1>
-          </div>
+    <!-- main area -->
+    <div role="main">
+      <div id="hero" class="scooter_hero">
+        <div class="scooter_hero-col1">
+          <h1>Cars are great, but not always the best solution.</h1>
+          <h2>
+            Through testing and our own expereinces, we at WEG know that cars aren't always necessary for trips within 5
+            blocks. That's why WEG is investing heavily in alternative modes of transit, including in out very own
+            E-Scooter program.
+          </h2>
         </div>
-      </section>
-      <section class="page2">
-        <div class="page2-bg">
-          <div class="page2-img-cont">
-            <img class="page2-photo" src="../assets/imgs/iphoneMock.png" alt="An image of the WEG Iphone App" />
-          </div>
-          <div class="page2-ins">
-            <h1>Easy!</h1>
-            <h2>First, download the WEG app on your smart phone.</h2>
-            <h2>Next, create your account.</h2>
-            <h2>Go ahead and click "Get a Ride"</h2>
-            <h2>Fill out your trip details and press confirm</h2>
-            <div class="page2-btns">
-              <a href="#" class="page2-link"
-                ><img src="../assets/imgs/AppleAppStore.png" alt="The Apple App Store"
-              /></a>
-              <a href="#" class="page2-link"><img src="../assets/imgs/googlePlay.png" alt="The Google Play Store" /></a>
-            </div>
-          </div>
+        <div class="scooter_hero-col2">
+          <img class="scooter-img" src="../assets/imgs/scooter_hero.jpg" alt="A man riding a WEG scooter" />
         </div>
-      </section>
-      <section class="page3">
-        <div class="page3-bg">
-          <div>
-            <h1>Now it's our job to connect you to nearby drivers</h1>
-            <h2>Those drivers see your destination, mileage, and duration of your ride.</h2>
-            <h2>Within 4 minutes, a driver will be headed on their way to pick you up!</h2>
-          </div>
+      </div>
+      <div class="scooter-facts">
+        <div class="where">
+          <h1>Where can I find a scooter?</h1>
+          <h2>
+            The WEG E-Scooter program is currently rolling out in stages, and we hope to continue our progress as usage
+            data comes in. Scooters are now available in the following cities:
+          </h2>
+          <ul>
+            <li><h3>&middot; Savannah, Georgia</h3></li>
+            <li><h3>&middot; Pittsburgh, Pennsylvania</h3></li>
+            <li><h3>&middot; Baltimore City, Maryland</h3></li>
+            <li><h3>&middot; Salt Lake City, Utah</h3></li>
+            <li><h3>&middot; Phoenix, Arizona</h3></li>
+          </ul>
         </div>
-      </section>
-      <section class="last-page">
-        <div class="page4-bg">
-          <video autoplay="autoplay" muted controls loop>
-            <source src="../assets/video/complete-minified.webm" type="video/webm" />
-            <source src="../assets/video/complete-minified.mp4" type="video/mp4" />
-          </video>
-          <div class="page-glass">
-            <h1 class="page4-title">Once you enter the car and scan your barcode, you're set!</h1>
-            <h2>Enjoy the ride!</h2>
-          </div>
+        <div class="scooter-faq">
+          <h1>Rates</h1>
+          <table class="scooter_rates">
+            <thead>
+              <tr>
+                <th>Name</th>
+                <th>Fee/Rate</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th>Unlock Charge</th>
+                <th>$1.00</th>
+              </tr>
+              <tr>
+                <th>Milage Fee</th>
+                <th>$0.60/half mile</th>
+              </tr>
+              <tr>
+                <th>Time Fee</th>
+                <th>$0.30/minute</th>
+              </tr>
+            </tbody>
+          </table>
+          <img class="scooter-map" src="../assets/imgs/scooter_map.png" alt="A map of locations with scooters" />
         </div>
-      </section>
+      </div>
     </div>
-    <!-- JQuery -->
-    <script>
-      if (window.screen.width > 1200) {
-        $('.main').tiltedpage_scroll({
-          sectionContainer: '> section', // define CSS selector here
-          angle: 20, // define the angle of tilted section
-          opacity: true, // toggle opacity
-          scale: true, // toggle scaling effect
-          outAnimation: true, //  do not want animation toggle
-        });
-      }
-    </script>
     <!-- Footer -->
     <footer role="contentinfo">
       <div class="footer-info">
