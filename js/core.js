@@ -1,3 +1,5 @@
+'use strict';
+
 /**
  * The following code implements the mobile menu
  */
@@ -132,6 +134,10 @@ if (bookingBtns !== []) {
 const textbox = document.querySelector('textarea');
 if (textbox) {
   textbox.addEventListener('input', (_) => {
-    textbox.style.height = `${textbox.scrollHeight}px`;
+    if (textbox.scrollHeight >= 37) {
+      textbox.style.height = `${textbox.scrollHeight}px`;
+    } else {
+      textbox.style.height = '37px';
+    }
   });
 }

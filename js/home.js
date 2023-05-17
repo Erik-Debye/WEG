@@ -1,3 +1,4 @@
+'use strict';
 /**
  * The following code implements the horizontal scrolling #about section
  */
@@ -52,4 +53,3 @@ form.addEventListener('submit', (e) => {
     gravity: 3,
   });
 });
-
