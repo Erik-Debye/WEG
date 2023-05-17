@@ -70,7 +70,7 @@ textarea {
   font-size: 1.8rem;
   padding: 0.4rem;
   line-height: 1.6;
-  height: 3.7rem;
+  height: 3.6rem;
 }
 textarea {
   overflow-y: hidden;
@@ -166,8 +166,8 @@ header {
   min-height: 6vh;
   padding: clamp(1rem, 3vw, 4rem);
 }
-header > #weg_logo,
-.mobile-nav > #weg_logo {
+header .weg_logo,
+.mobile-nav .weg_logo {
   width: clamp(9rem, 15vw, 15rem);
   height: 5vh;
 }
@@ -175,7 +175,7 @@ header > #weg_logo,
   display: flex;
   align-items: center;
   justify-content: flex-end;
-  gap: 4rem;
+  gap: clamp(2rem, 2vw, 5rem);
 }
 .navLink {
   font-size: 2.6rem;
@@ -383,8 +383,6 @@ header > #weg_logo,
 .reliable-img {
   width: 30%;
   height: auto;
-  border-radius: 0.6rem;
-  box-shadow: 1.3rem 0.9rem 2.5rem -0.8rem #0000007a;
 }
 .safe-cont h3 {
   text-align: left;
@@ -428,7 +426,6 @@ header > #weg_logo,
 }
 .ride-card {
   background-color: var(--white);
-  border-radius: 0.8rem;
   width: 28%;
   display: flex;
   flex-direction: column;
@@ -437,7 +434,6 @@ header > #weg_logo,
   gap: 2rem;
   padding: 3rem 2rem;
   margin-bottom: 4rem;
-  box-shadow: 1.3rem 0.9rem 2.5rem -0.8rem #0000007a;
   min-height: 95rem;
 }
 .ride-card > h2 {
@@ -459,12 +455,10 @@ header > #weg_logo,
 }
 .webgl {
   min-height: 26rem;
-  border-radius: 2rem;
   width: 100%;
 }
 .webgl-replace {
   display: none;
-  border-radius: 0.6rem;
 }
 /*End Cards Area*/
 /*Begin Who Area*/
@@ -493,7 +487,6 @@ header > #weg_logo,
 .who-col > img {
   width: clamp(34rem, 25vw, 50rem);
   height: auto;
-  border-radius: 0.6rem;
 }
 .who-inner-col {
   display: flex;
@@ -624,7 +617,7 @@ footer div {
   justify-content: space-between;
   font-size: clamp(1.2rem, 4vw, 1.8rem);
 }
-footer #weg_logo {
+footer .weg_logo {
   width: 10rem;
   height: 5rem;
 }
@@ -699,9 +692,7 @@ footer #weg_logo {
   align-items: center;
   justify-content: start;
   max-width: 30%;
-  border-radius: 0.8rem;
   background: #ffffff99;
-  box-shadow: 0 0.8rem 3.2rem 0 #1f26875e;
   -webkit-backdrop-filter: blur(0.2rem);
   backdrop-filter: blur(0.2rem);
   margin-top: 6rem;
@@ -785,7 +776,6 @@ footer #weg_logo {
   height: 75vh;
 }
 .safety-collage {
-  border-radius: 3rem;
   height: 94%;
   margin: 2rem auto;
   padding: 2rem 2rem;
@@ -1322,6 +1312,102 @@ select {
 .drive-apply {
   width: 100vw;
 }
+/* Scooters */
+.scooter_hero {
+  display: flex;
+  gap: 4rem;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 75vh;
+}
+.scooter_hero-col1 {
+  width: 50%;
+}
+.scooter_hero-col1 h1,
+.scooter_hero-col1 h2 {
+  width: 80%;
+}
+.scooter_hero-col1 h1 {
+  font-family: var(--serif);
+}
+.scooter_hero-col1 h2 {
+  margin-top: 2rem;
+}
+.scooter_hero-col2 {
+  height: 75vh;
+}
+.scooter-img {
+  height: 94%;
+  margin: 2rem auto;
+  padding: 2rem 2rem;
+  width: auto;
+}
+.scooter-facts {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  margin-bottom: 4rem;
+}
+.scooter-facts ul {
+  width: 90%;
+  margin: 4rem 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+}
+.scooter-facts li {
+  display: flex;
+  align-items: center;
+  justify-content: start;
+  gap: 6rem;
+  width: 100%;
+}
+.where h1,
+.scooter-faq h1 {
+  margin-top: 2rem;
+  font-family: var(--serif);
+  margin-bottom: 4rem;
+}
+.where,
+.scooter-faq {
+  width: 48%;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: start;
+}
+.scooter-map {
+  width: 80%;
+}
+.scooter_rates {
+  width: 50%;
+  background-color: #f7ce82d3;
+  margin-bottom: 2rem;
+  border: none;
+}
+.scooter_rates thead {
+  background-color: var(--yellow);
+  font-size: 2.4rem;
+}
+.scooter_rates tr {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.scooter_rates tr:not(:last-child) {
+  border-bottom: solid 0.1rem var(--black);
+}
+.scooter_rates th {
+  padding: 1.6rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 500;
+}
 @media screen and (max-width: 1700px) {
   .enterprise-contact-flex h1,
   .enterprise-contact-flex h2 {
@@ -1378,6 +1464,13 @@ select {
     grid-row: 2/3;
     grid-column: 2/3;
   }
+  .scooter_hero {
+    gap: 0;
+  }
+  .scooter_hero-col1 h1,
+  .scooter_hero-col1 h2 {
+    width: 98%;
+  }
 }
 @media only screen and (max-width: 1300px) {
   #who {
@@ -1399,6 +1492,21 @@ select {
   }
   .safety-hero-col1 {
     text-align: center;
+  }
+  .scooter_hero {
+    gap: 0rem;
+  }
+  .scooter_hero-col1 {
+    text-align: center;
+  }
+  .where h2,
+  .scooter-faq h2 {
+    width: 90%;
+    font-size: clamp(2.4rem, 5vw, 3rem);
+  }
+  .where h3,
+  .scooter-faq h3 {
+    font-size: clamp(2rem, 5vw, 2.6rem);
   }
   .page2-img-cont {
     width: auto;
@@ -1495,6 +1603,45 @@ select {
     width: 100%;
     border: none;
   }
+  .scooter_hero {
+    flex-direction: column;
+    height: auto;
+  }
+  .scooter-img {
+    height: 65vh;
+  }
+  .scooter_hero-col1 {
+    width: -moz-fit-content;
+    width: fit-content;
+    margin: 2rem auto;
+  }
+  .scooter_hero-col2 {
+    height: auto;
+  }
+  .scooter_hero-col1 h1,
+  .scooter_hero-col2 h1 {
+    width: auto;
+    max-width: 80%;
+    margin: 2rem auto;
+  }
+  .scooter-facts {
+    flex-direction: column;
+  }
+  .where,
+  .scooter-faq {
+    min-height: -moz-fit-content;
+    min-height: fit-content;
+    width: 100%;
+    border: none;
+  }
+  .scooter-map {
+    margin-bottom: 2rem;
+  }
+  .where h1,
+  .scooter-faq h1 {
+    margin-top: 0;
+    margin-bottom: 2rem;
+  }
 }
 @media only screen and (max-width: 1110px) {
   #contact {
@@ -1559,6 +1706,7 @@ select {
     max-width: 90%;
     max-height: -moz-fit-content;
     max-height: fit-content;
+    min-width: 60%;
   }
   .enterprise-card ul {
     gap: 4rem;
@@ -1635,6 +1783,14 @@ select {
     height: 4rem;
     width: auto;
   }
+  .scooter-facts ul {
+    gap: 1rem;
+    align-items: start;
+    width: fit-content;
+  }
+  .scooter-facts li {
+    gap: 1rem;
+  }
 }
 @media only screen and (max-width: 700px) {
   .footer-links-list {
@@ -1691,6 +1847,18 @@ select {
   #ride-type {
     width: 80vw;
     padding-left: 1rem;
+  }
+  .scooter-img {
+    height: auto;
+    width: 98vw;
+  }
+  .where h1,
+  .where h2,
+  .scooter-faq h1 {
+    text-align: center;
+  }
+  .scooter_rates {
+    width: 80%;
   }
 }
 @media screen and (max-width: 550px) {
@@ -1779,12 +1947,26 @@ select {
     flex-direction: column;
     gap: 1rem;
   }
+  .scooter-facts ul {
+    gap: 0rem;
+  }
+  .scooter-facts li {
+    flex-direction: column;
+  }
   .page2-ins {
     gap: 2rem;
   }
   .page2-photo {
     padding-top: 1rem;
     padding-bottom: 4rem;
+  }
+  .scooter_rates th {
+    padding: 0.8rem;
+    font-size: 1.8rem;
+    justify-content: start;
+  }
+  .scooter-facts li {
+    align-items: start;
   }
 }
 @media screen and (max-width: 350px) {
